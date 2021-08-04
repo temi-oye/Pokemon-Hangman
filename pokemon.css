@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+  font-family: "Carter One";
+  /* border: solid red 1px; */
+}
+header{
+  display: flex;
+  flex-direction: column;
+}
+h1{
+  text-align: center;
+}
+header button{
+  padding: 5px;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+#wrapper{
+  max-width: 960px;
+	position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  min-width: 450px;
+ }
+ main{
+   display: flex;
+   flex-direction: column;
+   flex: 0.75;
+   
+   justify-content: space-evenly;
+ }
+
+ #input-wrapper{
+   display: flex;
+   flex-direction: column;
+ }
+
+ #inner-wrapper{
+   display: flex;
+   justify-content: center;
+   
+ }
+
+ #submit{
+   margin-left: 5px;
+   padding: 5px;
+ }
+
+ #guess{
+  margin-right: 5px;
+ }
+
+#lives{
+  text-align: center;
+  font-size: 18px;
+}
+
+#word{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+ 
+}
+.hide{
+  color: transparent;
+  
+}
+.hide:hover{
+  color: transparent;
+  user-select: none;
+}
+.hide::selection{
+  color: transparent;
+  user-select: none;
+  color: none;
+  background: none;
+}
+.unhide{
+  color: black;
+  text-decoration: none;
+}
+
+.guessWord{
+  font-size: 24px;
+  list-style: none;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: 5px;
+  border-bottom: solid black 2px;
+}
+.word li{
+  text-align: center;
+}
+
+#wrong-guess-wrapper{
+  display: flex;
+
+}
+#wrong-guess-wrapper s{
+  margin-right: 10px;
+}
+
+#region-wrapper{
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
+
+.region{
+	position: relative;
+}
+.region:hover{
+	bottom: 5px;
+}
+
+#info{
+  margin-top: 15px;
+  text-align: center;
+}
+

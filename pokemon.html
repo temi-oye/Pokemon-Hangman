@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="pokemon.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Carter+One:300,400,600,700&amp;lang=en" />
+</head>
+<body>
+  <div id="wrapper"> 
+    <header>
+      <h1>Pokemon Hangman</h1>
+      <div id="region-wrapper">
+        <button id="kanto" class="region">Kanto</button>
+        <button id="johto" class="region">Johto</button>
+        <button id="hoenn" class="region">Hoenn</button>
+        <button id="sinnoh" class="region">Sinnoh</button>
+      </div>
+      <div id="info"></div>
+    </header> 
+    <main>
+      <div id="input-wrapper">
+        <ul id="word">Click one of the buttons above to get started</ul>
+        <div id="inner-wrapper">
+        <input type="text" maxlength="1" id="guess" onkeypress="return /[a-z]/i.test(event.key)"
+        placeholder="" autocomplete="off">
+        <input type="submit" value="Click Me!" id="submit">
+      </div>
+      </div>
+      <div id="wrong-guess-wrapper"></div>
+      <div id="lives"><pre>lives: </pre></div>
+    </main>
+
+  </div>
+  <script src="pokemon.js"></script>
+</body>
+</html>
