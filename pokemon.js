@@ -15,6 +15,9 @@ let hoenn = document.getElementById("hoenn");
 let sinnoh = document.getElementById("sinnoh");
 let info = document.getElementById("info");
 
+let sprite = document.getElementById("sprite");
+let spriteSrc = "";
+
 let pressSound = new Audio("https://www.myinstants.com/media/sounds/pokemon-exclamation-mark-sound-effect.mp3");
 let winSound = new Audio("https://www.myinstants.com/media/sounds/06-caught-a-pokemon.mp3");
 let correctSound = new Audio("https://www.myinstants.com/media/sounds/hit-super-effective.mp3");
@@ -97,6 +100,7 @@ function getNewWord(range){
 		})
 		.then((json) => {
 			updateWord(json.name);
+			spriteSrc = json.sprites.front_default;
 			
 		});
 		
@@ -183,6 +187,7 @@ function resetGame(){
 	lives.innerText = "lives:" + livesCounter;
 	wrongGeusses = "";
 	wrongGuessWrapper.innerText = "";
+	hideImage();
 }
 
 function lose(){
@@ -193,10 +198,25 @@ function lose(){
 		info.innerText = "You lose, try again";
 		disableInput();
 		loseSound.play();		
+		revealImage();
 	}
 
 function win(){
 	info.innerText = "You win, play again";
 	winSound.play();
 	disableInput();
+	revealImage();
+}
+
+function revealImage(){
+	sprite.src = spriteSrc;
+	sprite.alt = "Pokemon Reveal";
+	sprite.style.height = "150px";
+  sprite.style.width = "150px";
+}
+function hideImage(){
+	sprite.src = "";
+	sprite.alt = "";
+	sprite.style.height = "0";
+  sprite.style.width = "0";
 }
