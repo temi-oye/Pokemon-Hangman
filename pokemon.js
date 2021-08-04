@@ -210,7 +210,7 @@ function win(){
 
 function revealImage(){
 	sprite.src = spriteSrc;
-	sprite.alt = "Pokemon Reveal";
+	sprite.alt = "Sprite Reveal";
 	sprite.style.height = "150px";
   sprite.style.width = "150px";
 }

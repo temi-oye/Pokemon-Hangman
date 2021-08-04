@@ -3,7 +3,7 @@
 	padding: 0;
 	box-sizing: border-box;
   font-family: "Carter One";
-  border: solid red 1px;
+  /* border: solid red 1px; */
 }
 header{
   display: flex;
