@@ -11,12 +11,15 @@
 <body>
   <div id="wrapper"> 
     <header>
-      <h1>Pokemon Hangman</h1>
+      <!-- <div id="img-wrapper">
+        <img src="" alt="pokeball" srcset="">
+      </div> -->
+      <h1>Pokémon Hangman</h1>
       <div id="region-wrapper">
-        <button id="kanto" class="region">Kanto</button>
-        <button id="johto" class="region">Johto</button>
-        <button id="hoenn" class="region">Hoenn</button>
-        <button id="sinnoh" class="region">Sinnoh</button>
+        <button id="kanto" class="region">KANTO</button>
+        <button id="johto" class="region">JOHTO</button>
+        <button id="hoenn" class="region">HOENN</button>
+        <button id="sinnoh" class="region">SINNOH</button>
       </div>
       <div id="info"></div>
     </header> 
@@ -26,7 +29,7 @@
         <div id="inner-wrapper">
         <input type="text" maxlength="1" id="guess" onkeypress="return /[a-z]/i.test(event.key)"
         placeholder="" autocomplete="off">
-        <input type="submit" value="Click Me!" id="submit">
+        <input type="submit" value="ATTACK" id="submit">
       </div>
       </div>
       <div id="wrong-guess-wrapper"></div>

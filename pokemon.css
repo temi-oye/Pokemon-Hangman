@@ -11,9 +11,13 @@ header{
 }
 h1{
   text-align: center;
-}
-header button{
-  padding: 5px;
+  color: #fcbf49;
+  font-size: 42px;
+  font-weight: 1000;
+  text-shadow: 0px 3px 1px grey;
+  -webkit-text-stroke: 3px #184e77;
+
+  /* offset-x | offset-y | blur-radius | color */
 }
 html, body{
   height: 100%;
@@ -21,7 +25,7 @@ html, body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
+  background-color: #52b69a;
 }
 
 #wrapper{
@@ -54,11 +58,16 @@ html, body{
 
  #submit{
    margin-left: 5px;
-   padding: 5px;
+   padding: 10px;
+   border-radius: 5px;
+   background-color: #99d98c;
+   border: none;
  }
 
  #guess{
   margin-right: 5px;
+  background-color: #99d98c;
+  border: none;
  }
 
 #lives{
@@ -119,6 +128,24 @@ html, body{
 
 .region{
 	position: relative;
+  padding: 10px;
+
+  background-color: #99d98c;
+  border-radius: 5px;
+  border: none;
+
+  /* color: #eee;
+  /* background-color: #fcbf49; */
+
+  /* background-image: linear-gradient(#fcbf49, #96732C);
+  border: 3px solid #eee;
+  border-radius: 10px;
+  padding: 10px;
+
+  font-size: 18px;
+  font-weight: 900;
+  -webkit-text-stroke: 1px black; */ 
+
 }
 .region:hover{
 	bottom: 5px;

@@ -5,7 +5,8 @@ let guess = document.getElementById("guess").value;
 let wordLength = 0;
 let pokemonName = "";
 let lives = document.getElementById("lives");
-let livesCounter = 10;
+let maxHealth = 10;
+let livesCounter = maxHealth;
 let guessWord = "";
 let wrongGeusses = "";
 let wrongGuessWrapper = document.getElementById("wrong-guess-wrapper");
@@ -102,7 +103,6 @@ function getNewWord(range){
 		
 }
 
-
 function resetForm(){
 	document.getElementById("guess").value = "";
 }
@@ -179,7 +179,7 @@ function check(){
 	
 }
 function resetGame(){
-	livesCounter = 10;
+	livesCounter = maxHealth;
 	lives.innerText = "lives:" + livesCounter;
 	wrongGeusses = "";
 	wrongGuessWrapper.innerText = "";
@@ -190,13 +190,13 @@ function lose(){
 			var elements=document.getElementById('word').children;
 			elements.item(i).classList.remove("hide");
 		}
-		info.innerText = "You lose, try again";
+		info.innerText = "You lose. Try again?";
 		disableInput();
 		loseSound.play();		
 	}
 
 function win(){
-	info.innerText = "You win, play again";
+	info.innerText = "You win! Play again?";
 	winSound.play();
 	disableInput();
 }
