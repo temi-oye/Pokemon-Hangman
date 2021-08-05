@@ -8,6 +8,7 @@
 header{
   display: flex;
   flex-direction: column;
+  /* border: solid black 2px; */
 }
 h1{
   text-align: center;
@@ -124,6 +125,7 @@ html, body{
   display: flex;
   margin-top: 20px;
   justify-content: space-evenly;
+  
 }
 
 .region{
@@ -156,3 +158,13 @@ html, body{
   text-align: center;
 }
 
+#img-wrapper{
+  display: flex;
+  align-items: center;
+}
+#img-wrapper img{
+  height: 60px;
+  width: 60px;
+  margin: 0 5px;
+  
+}
