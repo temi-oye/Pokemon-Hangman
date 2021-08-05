@@ -210,13 +210,14 @@ function win(){
 
 function revealImage(){
 	sprite.src = spriteSrc;
-	sprite.alt = "Sprite Reveal";
+	
 	sprite.style.height = "150px";
   sprite.style.width = "150px";
+	// sprite.alt = "Sprite Reveal";
 }
 function hideImage(){
 	sprite.src = "";
-	sprite.alt = "";
+	// sprite.alt = "";
 	sprite.style.height = "0";
   sprite.style.width = "0";
 }
