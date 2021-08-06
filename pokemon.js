@@ -26,9 +26,6 @@ let loseSound = new Audio("https://www.myinstants.com/media/sounds/pokemon-red_b
 let battleSound = new Audio("https://www.myinstants.com/media/sounds/pokemon-battle.mp3");
 //kanto: 1-151 Johto: 152-251 hoenn: 252-386 sinnoh: 387-493
 
-window.onload = function () {
-	battleSound.play();
-}
 disableInput();
 
 
@@ -89,6 +86,7 @@ function updateWord(newWord){
 	guessWord = pokemonName;
 	wordLength = pokemonName.length; 
 	createBlanks(wordLength);
+	console.log(pokemonName);
 }
 
 function getNewWord(range){
@@ -213,11 +211,11 @@ function revealImage(){
 	
 	sprite.style.height = "150px";
   sprite.style.width = "150px";
-	// sprite.alt = "Sprite Reveal";
+	sprite.alt = "Sprite Reveal";
 }
 function hideImage(){
 	sprite.src = "";
-	// sprite.alt = "";
+	sprite.alt = "";
 	sprite.style.height = "0";
   sprite.style.width = "0";
 }
