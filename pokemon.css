@@ -30,13 +30,13 @@ html, body{
 }
 
 #wrapper{
-  max-width: 960px;
+  max-width: 675px;
 	position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 400px;
-  min-width: 450px;
+  min-height: 550px;
+  /* min-width: 450px; */
  }
  main{
    display: flex;
@@ -168,3 +168,4 @@ html, body{
   margin: 0 5px;
   
 }
+
