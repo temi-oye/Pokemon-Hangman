@@ -27,6 +27,7 @@ html, body{
   justify-content: center;
   align-items: center;
   background-color: #52b69a;
+
 }
 
 #wrapper{
@@ -81,7 +82,8 @@ html, body{
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
- 
+  height: 45px;
+  
 }
 .hide{
   color: transparent;
@@ -131,13 +133,13 @@ html, body{
 #region-wrapper{
   display: flex;
   margin-top: 20px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   
 }
 
 .region{
 	position: relative;
-  padding: 10px;
+  padding: 10px 15px;
 
   background-color: #99d98c;
   border-radius: 5px;
@@ -175,6 +177,8 @@ html, body{
 #info-wrapper{
   display: flex;
   margin-top: 25px;
+  /* margin: 25px 8px 0px 8px; */
+  height: 35px;
   
   /* flex-direction: row; */
   /* border: solid black 4px; */

@@ -79,7 +79,7 @@ johto.onclick = switchRegion;
 hoenn.onclick = switchRegion;
 sinnoh.onclick = switchRegion;
 
-lives.innerText = lives.innerText + livesCounter;
+// lives.innerText = lives.innerText + livesCounter;
 
 function updateWord(newWord){
 	word.innerText = "";
