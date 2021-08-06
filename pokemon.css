@@ -179,3 +179,14 @@ html, body{
   /* flex-direction: row; */
   /* border: solid black 4px; */
 }
+
+#img-wrapper{
+  display: flex;
+  align-items: center;
+}
+#img-wrapper img{
+  height: 60px;
+  width: 60px;
+  margin: 0 5px;
+  
+}
