@@ -41,8 +41,8 @@ function enableInput(){
 }
 
 function switchRegion(){
-	pressSound.play();
-	battleSound.play();
+	// pressSound.play();
+	// battleSound.play();
 	
 	enableInput();
 	resetGame();
@@ -54,19 +54,19 @@ function switchRegion(){
 
 	switch(this){
 		case kanto:
-			info.innerText = "This pokemon is in the kanto region";
+			info.innerText = "";
 			getNewWord(kantoDex);
 			break;
 		case johto:
-			info.innerText = "This pokemon is in the johto region";
+			info.innerText = "";;
 			getNewWord(johtoDex);
 			break;
 		case hoenn:
-			info.innerText = "This pokemon is in the hoenn region";
+			info.innerText = "";
 			getNewWord(hoennDex);
 			break;
 		case sinnoh:
-			info.innerText = "This pokemon is in the sinnoh region"
+			info.innerText = "";
 			getNewWord(sinnohDex);
 			break;	
 		default:
@@ -83,8 +83,9 @@ sinnoh.onclick = switchRegion;
 
 function updateWord(newWord){
 	word.innerText = "";
-	pokemonName = newWord.replace(/[^A-z]/g, "");
-	guessWord = pokemonName;
+	// pokemonName = newWord.replace(/[^A-z]/g, "");
+	pokemonName = newWord;
+	guessWord = pokemonName.replace(/[^A-z]/g, "");
 	wordLength = pokemonName.length; 
 	createBlanks(wordLength);
 	console.log(pokemonName);
@@ -129,8 +130,15 @@ function createBlanks(num){
 	for(let i=0; i<num; i++){
 
 		let li = document.createElement("Li");
-		li.classList.add("guessWord", "hide");
 		
+		
+		let letter = new RegExp("[a-z]");
+		let isLetter = letter.test(pokemonName[i]);
+		console.log(isLetter, pokemonName[i], "hi")
+
+		if(isLetter){
+			li.classList.add("guessWord", "hide");
+		}
 		li.innerText = pokemonName[i];
 
 		word.appendChild(li);
@@ -145,9 +153,9 @@ function check(){
 
 	for(let i=0; i<pokemonName.length; i++){
 		if(pokemonName[i] == guess){
-			var elements=document.getElementById('word').children;
+			let elements=document.getElementById('word').children;
 			elements.item(i).classList.remove("hide");
-			correctSound.play();
+			// correctSound.play();
 			let indexOfLetter = guessWord.indexOf(guess);
 
 			if(indexOfLetter !== -1){
@@ -157,7 +165,7 @@ function check(){
 	}
 	
 	if(pokemonName.indexOf(guess) ==-1 && livesCounter>0 && wrongGeusses.indexOf(guess) ==-1){
-		incorrectSound.play();
+		// incorrectSound.play();
 		livesCounter--;
 		lives.innerText = "lives:" + livesCounter;
 		wrongGeusses += guess;
@@ -195,13 +203,13 @@ function lose(){
 		}
 		info.innerText = "You lose. Try again?";
 		disableInput();
-		loseSound.play();		
+		// loseSound.play();		
 		revealImage();
 	}
 
 function win(){
 	info.innerText = "You win! Play again?";
-	winSound.play();
+	// winSound.play();
 	disableInput();
 	revealImage();
 }

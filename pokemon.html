@@ -19,12 +19,19 @@
         </div>
         
       </div>  
-      <div id="region-wrapper">
-        <button id="kanto" class="region">KANTO</button>
-        <button id="johto" class="region">JOHTO</button>
-        <button id="hoenn" class="region">HOENN</button>
-        <button id="sinnoh" class="region">SINNOH</button>
-      </div>
+      <form id="region-wrapper">
+        <input type="radio" id="kanto" name="region" class="region" checked>
+        <label for="kanto">KANTO</label>
+
+        <input type="radio" id="johto" name="region" class="region" checked>
+        <label for="johto">JOHTO</label>
+
+        <input type="radio" id="hoenn" name="region" class="region" checked>
+        <label for="hoenn">HOENN</label>
+
+        <input type="radio" id="sinnoh" name="region" class="region" checked>
+        <label for="sinnoh">SINNOH</label>
+      </form>
       <div id="info-wrapper">
         <div id="info"></div>
         <div id="lives"></div>
