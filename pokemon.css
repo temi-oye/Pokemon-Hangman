@@ -144,6 +144,7 @@ input[type="radio"] {
 	opacity: 0;
 	width: 0;
   height: 0;
+  display: none;
 }
 
 
@@ -163,12 +164,13 @@ input[type="radio"]:checked + label {
 
 input[type="radio"]:hover + label {
   cursor: pointer;
+  bottom: 5px;
 }
 
 
 
 #info{
-  flex: 1;
+  /* flex: 1; */
 }
 
 #sprite-wrapper{
@@ -179,13 +181,18 @@ input[type="radio"]:hover + label {
 
 #info-wrapper{
   display: flex;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   /* margin: 25px 8px 0px 8px; */
-  height: 35px;
+  /* height: 35px; */
   
-  /* flex-direction: row; */
+  flex-direction: column;
   /* border: solid black 4px; */
 }
+
+/* div < #info {
+  display: flex;
+  flex-direction: row;
+} */
 
 #img-wrapper{
   display: flex;
@@ -196,4 +203,11 @@ input[type="radio"]:hover + label {
   width: 60px;
   margin: 0 5px;
   
+}
+
+#region-wrapper + div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
 }
