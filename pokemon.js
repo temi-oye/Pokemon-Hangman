@@ -29,7 +29,6 @@ let battleSound = new Audio("https://www.myinstants.com/media/sounds/pokemon-bat
 
 disableInput();
 
-
 function disableInput(){
 	document.getElementById("guess").disabled = true;
 	submit.disabled = true;
@@ -92,7 +91,6 @@ function updateWord(newWord){
 }
 
 function getNewWord(range){
-
 	let url = 'https://pokeapi.co/api/v2/pokemon/' + range;
 	fetch(url)
 		.then((response) => {
@@ -100,8 +98,7 @@ function getNewWord(range){
 		})
 		.then((json) => {
 			updateWord(json.name);
-			spriteSrc = json.sprites.front_default;
-			
+			spriteSrc = json.sprites.front_default;	
 		});
 		
 }
@@ -124,13 +121,11 @@ function attempt(){
 	resetForm();
 }
 
-
 function createBlanks(num){
 	
 	for(let i=0; i<num; i++){
 
 		let li = document.createElement("Li");
-		
 		
 		let letter = new RegExp("[a-z]");
 		let isLetter = letter.test(pokemonName[i]);
@@ -167,7 +162,7 @@ function check(){
 	if(pokemonName.indexOf(guess) ==-1 && livesCounter>0 && wrongGeusses.indexOf(guess) ==-1){
 		// incorrectSound.play();
 		livesCounter--;
-		lives.innerText = "lives:" + livesCounter;
+		lives.innerText = "LIVES:" + livesCounter;
 		wrongGeusses += guess;
 
 		let s = document.createElement("s");
@@ -190,7 +185,7 @@ function check(){
 }
 function resetGame(){
 	livesCounter = maxHealth;
-	lives.innerText = "lives:" + livesCounter;
+	lives.innerText = "LIVES:" + livesCounter;
 	wrongGeusses = "";
 	wrongGuessWrapper.innerText = "";
 	hideImage();
@@ -216,7 +211,6 @@ function win(){
 
 function revealImage(){
 	sprite.src = spriteSrc;
-	
 	sprite.style.height = "150px";
   sprite.style.width = "150px";
 	sprite.alt = "Sprite Reveal";
