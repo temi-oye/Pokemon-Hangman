@@ -8,7 +8,6 @@
 header{
   display: flex;
   flex-direction: column;
-  /* border: solid black 2px; */
 }
 h1{
   text-align: center;
@@ -17,7 +16,6 @@ h1{
   font-weight: 1000;
   text-shadow: 0px 3px 1px grey;
   -webkit-text-stroke: 3px #184e77;
-
   /* offset-x | offset-y | blur-radius | color */
 }
 html, body{
@@ -36,7 +34,6 @@ html, body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* height: 400px; */
   min-width: 450px;
  }
  main{
@@ -79,8 +76,6 @@ html, body{
 
 #lives{
   text-align: right;
-  /* font-size: 18px; */
-  /* flex: 0.5; */
 }
 
 #word{
@@ -125,7 +120,6 @@ html, body{
   display: flex;
   justify-content: center;
   margin: 25px 0px;
-  /* border: solid yellow 3px; */
   height: 25px;
 
 }
@@ -147,8 +141,6 @@ input[type="radio"] {
   display: none;
 }
 
-
-
 input[type="radio"] + label {
   position: relative;
   padding: 10px 15px;
@@ -167,12 +159,6 @@ input[type="radio"]:hover + label {
   bottom: 5px;
 }
 
-
-
-#info{
-  /* flex: 1; */
-}
-
 #sprite-wrapper{
   text-align: center;
   height: 150px;
@@ -181,18 +167,8 @@ input[type="radio"]:hover + label {
 
 #info-wrapper{
   display: flex;
-  /* margin-top: 25px; */
-  /* margin: 25px 8px 0px 8px; */
-  /* height: 35px; */
-  
   flex-direction: column;
-  /* border: solid black 4px; */
 }
-
-/* div < #info {
-  display: flex;
-  flex-direction: row;
-} */
 
 #img-wrapper{
   display: flex;
@@ -204,7 +180,6 @@ input[type="radio"]:hover + label {
   margin: 0 5px;
   
 }
-
 #region-wrapper + div{
   display: flex;
   flex-direction: row;
