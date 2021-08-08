@@ -27,6 +27,18 @@ let loseSound = new Audio("https://www.myinstants.com/media/sounds/pokemon-red_b
 let battleSound = new Audio("https://www.myinstants.com/media/sounds/pokemon-battle.mp3");
 //kanto: 1-151 Johto: 152-251 hoenn: 252-386 sinnoh: 387-493
 
+const kantoBattleSound = new Audio("https://vgmsite.com/soundtracks/pokemon-game-boy-pok-mon-sound-complete-set-play-cd/rsbgemdj/1-07%20-%20Battle%20%28VS%20Wild%20Pok%C3%A9mon%29.mp3");
+const kantoWinSound = new Audio("https://vgmsite.com/soundtracks/pokemon-game-boy-pok-mon-sound-complete-set-play-cd/wllwzvql/1-16%20-%20Victory%20%28VS%20Wild%20Pok%C3%A9mon%29.mp3");
+
+const johtoBattleSound = new Audio("https://vgmsite.com/soundtracks/pokemon-gold-silver/zhidihnupz/17%20Battle%21%20%28Wild%20Pok%C3%A9mon%20-%20Johto%20Day%20Version%29.mp3")
+const johtoWinSound = new Audio("https://vgmsite.com/soundtracks/pokemon-gold-silver/tficaxbjbq/19%20Victory%21%20%28Wild%20Pok%C3%A9mon%29.mp3")
+
+const hoennWinSound = new Audio("https://vgmsite.com/soundtracks/pokemon-sapphire-2002-gba/zlfvjrlgwt/1-10%20Wild%20Pokemon%20Defeated%21.mp3")
+const hoennBattleSound = new Audio("https://vgmsite.com/soundtracks/pokemon-sapphire-2002-gba/jujrfrohyi/1-09%20Battle%21%20Wild%20Pokemon.mp3")
+
+const sinnohBattleSound = new Audio("https://vgmsite.com/soundtracks/pokemon-diamond-and-pearl-super-music-collection/qyrqtktu/1-09%20Battle%21%20Wild%20Pok%C3%A9mon.mp3")
+const sinnohWinSound = new Audio("https://vgmsite.com/soundtracks/pokemon-diamond-and-pearl-super-music-collection/pofknbfb/1-10%20Victory%20Against%20Wild%20Pok%C3%A9mon%21.mp3");
+
 disableInput();
 
 function disableInput(){
@@ -40,8 +52,13 @@ function enableInput(){
 }
 
 function switchRegion(){
-	// pressSound.play();
+	pressSound.play();
 	// battleSound.play();
+
+	stopBattleMusic();
+
+	winSound.pause();
+	winSound.currentTime = 0;
 	
 	enableInput();
 	resetGame();
@@ -55,18 +72,26 @@ function switchRegion(){
 		case kanto:
 			info.innerText = "";
 			getNewWord(kantoDex);
+			kantoBattleSound.play();
+			winSound = kantoWinSound;
 			break;
 		case johto:
 			info.innerText = "";;
 			getNewWord(johtoDex);
+			johtoBattleSound.play();
+			winSound = johtoWinSound;
 			break;
 		case hoenn:
 			info.innerText = "";
 			getNewWord(hoennDex);
+			hoennBattleSound.play();
+			winSound = hoennWinSound;
 			break;
 		case sinnoh:
 			info.innerText = "";
 			getNewWord(sinnohDex);
+			sinnohBattleSound.play();
+			winSound = sinnohWinSound;
 			break;	
 		default:
 	}
@@ -100,6 +125,10 @@ function getNewWord(range){
 			updateWord(json.name);
 			spriteSrc = json.sprites.front_default;	
 		});
+
+		// for testing/ restrict api calls
+	// updateWord("getNewWord")
+	// spriteSrc = "";
 		
 }
 
@@ -143,6 +172,8 @@ function createBlanks(num){
 }
 
 function check(){	
+// document.querySelector("label[for='" + "kanto" + "']").style.outline = "solid black 14px";
+
 	guess = document.getElementById("guess").value;
 	guess = guess.toLowerCase();
 
@@ -150,7 +181,7 @@ function check(){
 		if(pokemonName[i] == guess){
 			let elements=document.getElementById('word').children;
 			elements.item(i).classList.remove("hide");
-			// correctSound.play();
+			correctSound.play();
 			let indexOfLetter = guessWord.indexOf(guess);
 
 			if(indexOfLetter !== -1){
@@ -160,7 +191,7 @@ function check(){
 	}
 	
 	if(pokemonName.indexOf(guess) ==-1 && livesCounter>0 && wrongGeusses.indexOf(guess) ==-1){
-		// incorrectSound.play();
+		incorrectSound.play();
 		livesCounter--;
 		lives.innerText = "LIVES:" + livesCounter;
 		wrongGeusses += guess;
@@ -196,15 +227,17 @@ function lose(){
 			var elements=document.getElementById('word').children;
 			elements.item(i).classList.remove("hide");
 		}
+		stopBattleMusic();
 		info.innerText = "You lose. Try again?";
 		disableInput();
-		// loseSound.play();		
+		loseSound.play();		
 		revealImage();
 	}
 
 function win(){
+	stopBattleMusic()
 	info.innerText = "You win! Play again?";
-	// winSound.play();
+	winSound.play();
 	disableInput();
 	revealImage();
 }
@@ -220,4 +253,18 @@ function hideImage(){
 	sprite.alt = "";
 	sprite.style.height = "0";
   sprite.style.width = "0";
+}
+
+function stopBattleMusic(){
+	kantoBattleSound.pause();
+	kantoBattleSound.currentTime = 0;
+
+	johtoBattleSound.pause();
+	johtoBattleSound.currentTime = 0;
+
+	hoennBattleSound.pause();
+	hoennBattleSound.currentTime = 0;
+
+	sinnohBattleSound.pause();
+	sinnohBattleSound.currentTime = 0;
 }
